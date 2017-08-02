@@ -1,0 +1,34 @@
+<div align="left" id="topbar">
+    <h1 id="glossary_title"><%= @my_glossary.name %> (
+        <%= @my_glossary.lang1 %> -
+        <%= @my_glossary.lang2 %> )</h1>
+    <form id="search_box" name="search_form" action="#">
+        <input id="search_input" type="search" />
+       
+	    <input id="search_clear_button" type="button" value="Clear" onClick="$('#search_input').val(''); $('#search_input').change();" disabled="disabled" />
+    </form>
+</div>
+
+<script> var list1 = []; var list2 = []; </script>
+<% @my_glossary.my_words.order(:lang1).each do |w| %>
+<script>
+list1.push([lang1:<%= "\"" + w.lang1 + "\"" %>, lang2:<%= "\"" + w.lang2 + "\"" %>]);
+</script>
+<% end %>
+<% @my_glossary.my_words.order(:lang2).each do |w| %>
+<script>
+list2.push([lang1:<%= "\"" + w.lang2 + "\"" %>, lang2:<%= "\"" + w.lang1 + "\"" %>]);
+</script>
+<% end %>
+<script>
+var viewList = list2;
+var container = document.getElementById("container");
+for (i = 0; i < viewList.length; i++) {
+    container.innerHTML = '<div class="box"> <p title="' + viewList[i].lang2 + '" class="tooltip"> <strong>' + viewList[i].lang1 %> + '</strong> </p> </div>';
+}
+</script>
+
+<div id="container">
+</div>
+<br />
+

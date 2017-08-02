@@ -1,0 +1,35 @@
+// Place all the styles related to the MyGlossaries controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#glossary_title { 
+    float:left;
+	margin-right: 100px;
+}
+
+#container {
+    clear: both;
+    text-align: justify;
+    -ms-text-justify: distribute-all-lines;
+    text-justify: distribute-all-lines;
+    font-size: 0;
+    margin: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.box, .invisible {
+    text-align: left;
+    width: 300px;
+    vertical-align: top;
+    font-size: 13px;
+    display: inline-block;
+    *display: inline;
+}
+
+.stretch {
+    width: 100%;
+    display: inline-block;
+    font-size: 0;
+    line-height: 0;
+}
+

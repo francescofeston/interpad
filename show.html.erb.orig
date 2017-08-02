@@ -1,0 +1,37 @@
+<div align="left" id="topbar">
+    <h1><%= @my_glossary.name %> (
+        <%= @my_glossary.lang1 %> -
+        <%= @my_glossary.lang2 %> )</h1>
+    <form id="search_box" name="search_form" action="#">
+        <input id="search_input" type="search" />
+        <input id="search_clear_button" type="button" value="Clear" onClick="$('#search_input').val(''); $('#search_input').change();" disabled="disabled" />
+    </form>
+</div>
+
+<div id="container">
+<%
+        @my_glossary.my_words.order(:lang1).each do |w|
+%>
+    <div class="box">
+        <p title="<%= w.lang2 %>" class="tooltip">
+            <strong><%= w.lang1 %></strong>
+        </p>
+    </div>
+<%
+    end
+%>
+<div class="invisible"></div>
+<div class="invisible"></div>
+<div class="invisible"></div>
+<div class="invisible"></div>
+<div class="invisible"></div>
+<div class="invisible"></div>
+<div class="invisible"></div>
+<div class="invisible"></div>
+<div class="invisible"></div>
+<div class="invisible"></div>
+<div class="invisible"></div>
+<span class="stretch"></span>
+</div>
+<br />
+

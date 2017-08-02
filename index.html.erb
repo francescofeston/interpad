@@ -1,0 +1,39 @@
+<h1>Listing my_words</h1>
+
+<table>
+  <tr>
+    <th>Lang1</th>
+    <th>Lang2</th>
+    <th>Lang3</th>
+    <th>Lang4</th>
+    <th>Lang5</th>
+    <th>Attr1</th>
+    <th>Attr2</th>
+    <th>Attr3</th>
+    <th>Myglossary</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @my_words.each do |my_word| %>
+  <tr>
+    <td><%= my_word.lang1 %></td>
+    <td><%= my_word.lang2 %></td>
+    <td><%= my_word.lang3 %></td>
+    <td><%= my_word.lang4 %></td>
+    <td><%= my_word.lang5 %></td>
+    <td><%= my_word.attr1 %></td>
+    <td><%= my_word.attr2 %></td>
+    <td><%= my_word.attr3 %></td>
+    <td><%= my_word.MyGlossary %></td>
+    <td><%= link_to 'Show', my_word %></td>
+    <td><%= link_to 'Edit', edit_my_word_path(my_word) %></td>
+    <td><%= link_to 'Destroy', my_word, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New My word', new_my_word_path %>

@@ -1,0 +1,53 @@
+<%= form_for(@my_word) do |f| %>
+  <% if @my_word.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@my_word.errors.count, "error") %> prohibited this my_word from being saved:</h2>
+
+      <ul>
+      <% @my_word.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :lang1 %><br />
+    <%= f.text_field :lang1 %>
+  </div>
+  <div class="field">
+    <%= f.label :lang2 %><br />
+    <%= f.text_field :lang2 %>
+  </div>
+  <div class="field">
+    <%= f.label :lang3 %><br />
+    <%= f.text_field :lang3 %>
+  </div>
+  <div class="field">
+    <%= f.label :lang4 %><br />
+    <%= f.text_field :lang4 %>
+  </div>
+  <div class="field">
+    <%= f.label :lang5 %><br />
+    <%= f.text_field :lang5 %>
+  </div>
+  <div class="field">
+    <%= f.label :attr1 %><br />
+    <%= f.text_field :attr1 %>
+  </div>
+  <div class="field">
+    <%= f.label :attr2 %><br />
+    <%= f.text_field :attr2 %>
+  </div>
+  <div class="field">
+    <%= f.label :attr3 %><br />
+    <%= f.text_field :attr3 %>
+  </div>
+  <div class="field">
+    <%= f.label :MyGlossary %><br />
+    <%= f.text_field :MyGlossary %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
